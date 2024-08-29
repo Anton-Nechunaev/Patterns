@@ -4,36 +4,38 @@ import com.example.House;
 import com.example.components.house.stone.StoneFoundation;
 import com.example.components.house.stone.StoneRoof;
 import com.example.components.house.stone.StoneWalls;
-import com.example.components.house.wooden.WoodenFoundation;
-import com.example.components.house.wooden.WoodenRoof;
-import com.example.components.house.wooden.WoodenWalls;
 
 public class BuilderStoneHouse implements Builder {
 
     private House house;
 
     @Override
-    public void reset() {
+    public Builder reset() {
         house = new House();
+        return this;
     }
 
     @Override
-    public void buildFoundation() {
+    public Builder buildFoundation() {
         house.setFoundation(new StoneFoundation().getInfo());
+        return this;
     }
 
     @Override
-    public void buildWalls() {
+    public Builder buildWalls() {
         house.setWalls(new StoneWalls().getInfo());
+        return this;
     }
 
     @Override
-    public void buildRoof() {
-        house.setRoof(new StoneRoof().getInfo());
+    public Builder buildRoof() {
+        house.setRoof(new StoneRoof()   .getInfo());
+        return this;
     }
 
-    @Override
-    public void getResult() {
+
+    public House build() {
         house.getHouseInfo();
+        return house;
     }
 }

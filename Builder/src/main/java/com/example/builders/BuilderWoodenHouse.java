@@ -9,28 +9,32 @@ public class BuilderWoodenHouse implements Builder {
     private House house;
 
     @Override
-    public void reset() {
+    public Builder reset() {
         house = new House();
+        return this;
     }
 
     @Override
-    public void buildFoundation() {
+    public Builder buildFoundation() {
         house.setFoundation(new WoodenFoundation().getInfo());
+        return this;
     }
 
     @Override
-    public void buildWalls() {
+    public Builder buildWalls() {
         house.setWalls(new WoodenWalls().getInfo());
+        return this;
     }
 
     @Override
-    public void buildRoof() {
+    public Builder buildRoof() {
         house.setRoof(new WoodenRoof().getInfo());
+        return this;
     }
 
-    @Override
-    public void getResult() {
+    public House build() {
         house.getHouseInfo();
+        return house;
     }
 
 }

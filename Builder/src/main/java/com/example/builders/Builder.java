@@ -1,13 +1,16 @@
 package com.example.builders;
 
+import com.example.House;
+
 public interface Builder {
-    void reset();
+    Builder reset();
 
-    void buildFoundation();
+    Builder buildFoundation();
 
-    void buildWalls();
+    Builder buildWalls();
 
-    void buildRoof();
+    Builder buildRoof();
+    House build();
 
-    void getResult();
+
 }

@@ -9,16 +9,16 @@ public class DirectorBuilderHouse {
         this.builder = builder;
     }
 
-    public void createHouse() {
+    public House createHouse() {
         builder.reset();
         builder.buildFoundation();
         builder.buildWalls();
         builder.buildRoof();
-        builder.getResult();
+        return builder.build();
     }
 
-    public void createNewHouse(Builder builder) {
+    public House createNewHouse(Builder builder) {
         this.builder = builder;
-        createHouse();
+        return createHouse();
     }
 }
