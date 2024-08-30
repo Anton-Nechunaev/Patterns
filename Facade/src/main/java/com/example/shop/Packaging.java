@@ -4,7 +4,7 @@ import com.example.fasade.Support;
 import com.example.fasade.SupportService;
 
 public class Packaging implements Support {
-    SupportService service;
+    Support service;
 
     public Packaging(SupportService service) {
         this.service = service;

@@ -4,7 +4,7 @@ import com.example.fasade.Support;
 import com.example.fasade.SupportService;
 
 public class Client implements Support {
-    SupportService service;
+    Support service;
 
     public Client(SupportService service) {
         this.service = service;
